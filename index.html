@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wabbaseball · Coming Soon</title>
+<meta name="description" content="Wabbaseball is a retro pixel baseball game you watch and manage, pitch by pitch, built on real stats. Coming soon.">
+<meta property="og:title" content="Wabbaseball · Coming Soon">
+<meta property="og:description" content="Retro pixel baseball you watch and manage, pitch by pitch, built on real stats. First pitch coming soon.">
+<meta property="og:url" content="https://wabbaseball.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wabbaseball">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Wabbaseball · Coming Soon">
+<meta name="theme-color" content="#0b0b12">
+<link rel="canonical" href="https://wabbaseball.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='4' y='1' width='8' height='14' fill='%231a120c'/%3E%3Crect x='1' y='4' width='14' height='8' fill='%231a120c'/%3E%3Crect x='2' y='3' width='12' height='10' fill='%231a120c'/%3E%3Crect x='3' y='2' width='10' height='12' fill='%231a120c'/%3E%3Crect x='5' y='2' width='6' height='12' fill='%23f7f1e2'/%3E%3Crect x='2' y='5' width='12' height='6' fill='%23f7f1e2'/%3E%3Crect x='3' y='3' width='10' height='10' fill='%23f7f1e2'/%3E%3Crect x='4' y='4' width='3' height='2' fill='%23fff'/%3E%3Cpath d='M4 3h1v1H4zM3 5h1v1H3zM3 7h1v1H3zM3 9h1v1H3zM4 11h1v1H4zM11 3h1v1h-1zM12 5h1v1h-1zM12 7h1v1h-1zM12 9h1v1h-1zM11 11h1v1h-1z' fill='%23d8262e'/%3E%3C/svg%3E">
+<style>
+@font-face { font-family: "PS2P"; src: url(data:font/woff2;base64,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) format("woff2"); font-display: swap; }
+@font-face { font-family: "Chakra"; src: url(data:font/woff2;base64,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) format("woff2"); font-weight: 600; font-display: swap; }
+/* colours follow the game's design/ui/tokens.css; the site is dark only, like the game */
+:root {
+  color-scheme: dark;
+  --bg: #0b0b12; --panel: #14141f; --panel2: #1c1c2c; --panel3: #2a2a44;
+  --line: #e8e8f0; --line2: #4a4a6a; --ink: #e8e8f0; --dim: #b4b4c8; --gold: #ffd75e; --amber: #ffb43c; --shadow: #000;
+  --steel: #7d8299; --steel-hi: #c9cde0; --steel-lo: #474b62;
+  --scrim-light: rgba(6, 6, 12, 0.4);
+  --font: "PS2P", "Press Start 2P", ui-monospace, monospace;
+  --font-body: "Chakra", "Chakra Petch", "Arial Narrow", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+body { font: 600 16px/24px var(--font-body); -webkit-font-smoothing: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+#stage { position: relative; height: 100vh; height: 100svh; min-height: 520px; overflow: hidden; background: #000; }
+#stage canvas.px { position: absolute; image-rendering: pixelated; image-rendering: crisp-edges; }
+.scrim { position: absolute; inset: 0; background: var(--scrim-light); }
+.scrim::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: linear-gradient(to bottom, transparent, rgba(6,6,12,.75)); }
+
+/* the column: logo, scoreboard, press start */
+.ui {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: clamp(12px, 2.6vh, 28px);
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) calc(56px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+#logo-host { position: relative; flex: none; cursor: pointer; }
+#logo-host canvas { position: absolute; left: 0; top: 0; image-rendering: pixelated; image-rendering: crisp-edges; }
+
+/* the scoreboard: steel frame, chase lights, amber bulbs */
+.board {
+  position: relative; width: min(760px, 100%); padding: 10px;
+  background: var(--steel);
+  box-shadow: inset 2px 2px 0 var(--steel-hi), inset -2px -2px 0 var(--steel-lo), 0 0 0 2px #06060a, 6px 6px 0 2px rgba(0,0,0,.55);
+}
+.board::before, .board::after { /* hanging cables */
+  content: ""; position: absolute; bottom: 100%; width: 4px; height: clamp(10px, 2.6vh, 26px);
+  background: linear-gradient(90deg, #9a9eb8 0 1px, #2a2d3c 1px 4px);
+}
+.board::before { left: 22%; } .board::after { right: 22%; }
+.chase { position: absolute; left: 3px; right: 3px; height: 4px; display: flex; justify-content: space-between; }
+.chase.top { top: 3px; } .chase.bot { bottom: 3px; }
+.chase i { width: 4px; height: 4px; background: #7a6024; }
+.chase i.on { background: #fff2b0; box-shadow: 0 0 4px #ffd75e; }
+.screen { position: relative; background: #05050a; box-shadow: inset 2px 2px 0 #3c4054, inset -2px -2px 0 #d6d9ea; padding: 4px; }
+.screen > div { position: relative; overflow: hidden; }
+.screen > div::after { /* bulb grid */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle at 50% 50%, transparent 1.35px, #05050a 1.95px); background-size: 4px 4px;
+}
+.main { text-align: center; padding: 14px 4px 10px; }
+.main span {
+  font: 40px/48px var(--font); color: var(--amber); letter-spacing: 2px; white-space: nowrap;
+  text-shadow: 0 0 10px rgba(255,180,60,.75), 0 0 2px #fff0c4;
+}
+.tick { border-top: 2px solid #141a28; height: 52px; }
+.track { position: absolute; top: 10px; left: 0; display: flex; white-space: nowrap; animation: crawl var(--crawl, 60s) linear infinite; }
+.track span { font: 24px/32px var(--font); color: #f4f7ff; text-shadow: 0 0 8px rgba(221,232,255,.7); padding-right: 40px; display: inline-flex; align-items: center; gap: 40px; }
+.track b { display: inline-block; width: 12px; height: 12px; background: var(--gold); box-shadow: 0 0 6px var(--gold); }
+@keyframes crawl { to { transform: translateX(-50%); } }
+
+/* press start */
+#start {
+  font: 24px/32px var(--font); color: var(--gold); background: none; border: 0; padding: 8px 12px; cursor: pointer;
+  text-shadow: 3px 3px 0 var(--shadow); animation: blink 1s steps(1) infinite;
+}
+#start:hover, #start:focus-visible { animation: none; color: #fff3b0; }
+#start:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+@keyframes blink { 50% { visibility: hidden; } }
+.tag { font: 600 16px/24px var(--font-body); color: var(--ink); text-align: center; text-shadow: 2px 2px 0 #000; max-width: 42em; margin-top: calc(-1 * clamp(4px, 1.4vh, 16px)); text-wrap: balance; }
+
+/* footer */
+#stage > footer {
+  position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 0 max(16px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+.btn {
+  font: 8px/12px var(--font); text-transform: uppercase; color: var(--ink); background: var(--panel2);
+  border: 2px solid var(--line2); box-shadow: 2px 2px 0 var(--shadow); padding: 10px 12px; min-height: 36px; cursor: pointer;
+}
+.btn:hover { color: var(--gold); border-color: var(--line); background: var(--panel3); }
+.btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.stamp { font: 8px/14px var(--font); color: var(--dim); text-align: right; text-shadow: 1px 1px 0 #000; }
+
+/* the "not yet" dialog, in the game's pop-up style */
+dialog {
+  width: min(460px, calc(100vw - 32px)); padding: 0; color: var(--ink); background: var(--panel);
+  border: 2px solid var(--line); box-shadow: 0 0 0 2px #000, 8px 8px 0 2px rgba(0,0,0,.7);
+}
+dialog::backdrop { background: rgba(6,6,12,.6); }
+dialog h2 { margin: 0; padding: 14px 18px 12px; font: 16px/24px var(--font); color: var(--gold); background: var(--panel2); border-bottom: 2px solid var(--line2); text-shadow: 2px 2px 0 #000; }
+dialog p { margin: 0; padding: 16px 18px 0; }
+dialog p + p { padding-top: 10px; color: var(--dim); }
+dialog form { display: flex; justify-content: flex-end; padding: 18px; }
+dialog .ok { font: 12px/16px var(--font); color: var(--bg); background: var(--gold); border: 2px solid var(--line); box-shadow: 2px 2px 0 #000; padding: 10px 16px; min-height: 40px; cursor: pointer; }
+dialog .ok:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+dialog .ok kbd { font: inherit; opacity: .6; margin-right: 8px; }
+
+.wipe { position: absolute; inset: 0; background: var(--bg); z-index: 5; pointer-events: none; animation: wipe 320ms steps(8) forwards; }
+@keyframes wipe { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 0 100%); } }
+
+/* hero footer bits */
+.btn.diamond { position: absolute; z-index: 3; top: max(14px, env(safe-area-inset-top)); right: max(16px, env(safe-area-inset-right)); width: 44px; height: 44px; min-height: 0; padding: 0; display: grid; place-items: center; }
+.btn.diamond svg { image-rendering: pixelated; transition: transform .3s steps(4); }
+.btn.diamond:hover svg { transform: rotate(90deg); }
+a.btn { text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.xmark { font: 12px/12px var(--font); }
+.cue { position: absolute; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px;
+  font: 8px/12px var(--font); color: var(--ink); text-decoration: none; text-shadow: 1px 1px 0 #000; animation: bob 1.2s steps(2) infinite; }
+.cue i { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 8px solid var(--gold); filter: drop-shadow(2px 2px 0 #000); }
+@keyframes bob { 50% { transform: translate(-50%, 4px); } }
+
+/* the lineup: features, screenshots alternating sides */
+.lineup { position: relative; padding: 0 16px 24px;
+  background: linear-gradient(#1d5636 0 30px, #ffd75e 30px 32px, transparent 32px), repeating-linear-gradient(90deg, #36893f 0 48px, #3f9b4a 48px 96px);
+  background-color: #3f9b4a; }
+.lineup::before { content: ""; position: absolute; inset: 32px 0 0; background: linear-gradient(rgba(11,11,18,.82), rgba(11,11,18,.94) 260px, var(--bg) 100%); pointer-events: none; }
+.lineup > * { position: relative; }
+.lineup-head { max-width: 1160px; margin: 0 auto; padding: 96px 0 0; text-align: center; }
+.lineup-head h2 { margin: 0; font: 32px/40px var(--font); color: var(--gold); text-shadow: 4px 4px 0 #000; }
+.lineup-head p { margin: 14px 0 0; color: var(--dim); }
+.feat { max-width: 1160px; margin: 0 auto; padding: 56px 0; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.feat + .feat { border-top: 2px dashed rgba(74,74,106,.6); }
+.feat.flip .shot { order: 2; }
+.shot { position: relative; margin: 0; }
+.shot > img { display: block; width: 100%; height: auto; image-rendering: auto; background: #000; cursor: zoom-in;
+  border: 2px solid var(--line); box-shadow: 0 0 0 2px #000, 10px 10px 0 2px rgba(0,0,0,.65); }
+.shot .inset { position: absolute; width: 42%; right: -4%; bottom: -10%; }
+.feat.flip .shot .inset { right: auto; left: -4%; }
+.shot .inset.card { width: 28%; right: -3%; bottom: -14%; transform: rotate(3deg); border-radius: 10px; border: 0; box-shadow: 8px 8px 0 rgba(0,0,0,.6); }
+.copy .order { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.copy .num { font: 16px/16px var(--font); color: var(--bg); background: var(--gold); padding: 8px 9px 8px 10px; box-shadow: 3px 3px 0 #000; }
+.copy .pos { font: 700 14px/20px var(--font-body); letter-spacing: 2px; text-transform: uppercase; color: var(--dim); }
+.copy h3 { margin: 0 0 16px; font: 24px/36px var(--font); color: var(--ink); text-shadow: 3px 3px 0 #000; text-wrap: balance; }
+.copy p { margin: 0; font-size: 18px; line-height: 28px; color: #cfd0de; max-width: 30em; }
+.copy p + p { margin-top: 10px; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .4s steps(4), transform .4s steps(4); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* last call */
+.follow { text-align: center; padding: 72px 16px 40px; }
+.follow h2 { margin: 0 0 12px; font: 24px/32px var(--font); color: var(--gold); text-shadow: 3px 3px 0 #000; }
+.follow p { margin: 0 0 24px; color: var(--dim); }
+.btn.big { font: 12px/16px var(--font); padding: 14px 18px; color: var(--bg); background: var(--gold); border-color: var(--line); }
+.btn.big:hover { background: #fff3b0; color: var(--bg); }
+.follow-btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.btn.big.alt { color: var(--ink); background: var(--panel2); border-color: var(--line2); }
+.btn.big.alt:hover { color: var(--gold); background: var(--panel3); border-color: var(--line); }
+.pagefoot { display: flex; justify-content: center; padding: 32px 16px calc(24px + env(safe-area-inset-bottom)); }
+.pagefoot .stamp { text-align: center; }
+
+/* zoomed screenshot */
+#zoom { width: min(1440px, calc(100vw - 32px)); max-width: none; padding: 0; background: #000; border: 2px solid var(--line); cursor: zoom-out; }
+#zoom img { display: block; width: 100%; height: auto; }
+
+
+/* intro */
+.lede { margin: 18px auto 0; max-width: 40em; font-size: 19px; line-height: 30px; color: #d6d7e4; text-wrap: pretty; }
+.facts { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 28px 0 44px; padding: 0; }
+.facts li { font: 700 14px/20px var(--font-body); letter-spacing: 1px; text-transform: uppercase; color: var(--dim); background: var(--panel); border: 2px solid var(--line2); box-shadow: 3px 3px 0 #000; padding: 10px 14px; }
+.facts b { font: 16px/20px var(--font); color: var(--gold); margin-right: 6px; letter-spacing: 0; }
+.hero-shot { max-width: 980px; margin: 0 auto; }
+.block-head { max-width: 1160px; margin: 0 auto; padding: 104px 0 36px; text-align: center; }
+.block-head .kicker { display: inline-block; font: 8px/12px var(--font); color: var(--bg); background: var(--gold); padding: 6px 8px; box-shadow: 2px 2px 0 #000; }
+.block-head h2 { margin: 16px 0 0; font: 32px/40px var(--font); color: var(--gold); text-shadow: 4px 4px 0 #000; }
+.block-head p { margin: 16px auto 0; max-width: 38em; font-size: 18px; line-height: 28px; color: #cfd0de; }
+/* four modes, styled like the main-menu tiles */
+.modes { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.mode { background: var(--panel); border: 2px solid var(--line); box-shadow: 0 0 0 2px #000, 8px 8px 0 2px rgba(0,0,0,.6); display: flex; flex-direction: column; }
+.mode .shot > img { border: 0; border-bottom: 2px solid var(--line2); box-shadow: none; aspect-ratio: 16 / 10; object-fit: cover; object-position: center top; }
+.mode .tile { padding: 20px 22px 24px; }
+.mode h3 { margin: 0; font: 16px/24px var(--font); color: var(--gold); display: flex; align-items: center; gap: 10px; }
+.mode .sub { margin: 4px 0 12px; color: var(--ink); font-size: 16px; }
+.mode .tile p:last-child { margin: 0; color: var(--dim); font-size: 16px; line-height: 25px; }
+.mode.locked { border-color: var(--line2); }
+.mode.locked h3 { color: #a8a8c0; }
+.mode.locked .shot > img { filter: grayscale(.85) brightness(.55); }
+.lock { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font: 12px/16px var(--font); color: var(--gold); background: rgba(11,11,18,.9); border: 2px solid var(--line2); padding: 10px 14px; box-shadow: 3px 3px 0 #000; white-space: nowrap; }
+.padlock { position: relative; width: 12px; height: 10px; background: #a8a8c0; margin-top: 6px; flex: none; }
+.padlock::before { content: ""; position: absolute; left: 2px; top: -8px; width: 4px; height: 6px; border: 2px solid #a8a8c0; border-bottom: 0; }
+/* cards */
+.cardrow { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; align-items: start; }
+.pcard { margin: 0; text-align: center; }
+.pcard img { display: block; width: 100%; height: auto; filter: drop-shadow(8px 10px 0 rgba(0,0,0,.6)); transition: transform .25s steps(3); }
+.pcard:nth-child(odd) img { transform: rotate(-2deg); } .pcard:nth-child(even) img { transform: rotate(2deg) translateY(18px); }
+.pcard:hover img { transform: translateY(-10px) rotate(0); }
+.pcard figcaption { margin-top: 26px; font-size: 16px; color: var(--dim); }
+.pcard figcaption b { display: block; font: 16px/24px var(--font); color: var(--gold); margin-bottom: 4px; }
+@media (max-width: 860px) {
+  .modes { grid-template-columns: 1fr; gap: 24px; }
+  .cardrow { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+  .block-head { padding-top: 72px; }
+  .block-head h2 { font-size: 22px; line-height: 30px; }
+  .lede { font-size: 17px; line-height: 27px; }
+  .pcard:nth-child(even) img { transform: rotate(2deg); }
+}
+
+@media (max-width: 860px) {
+  .feat { grid-template-columns: 1fr; gap: 40px; padding: 44px 0; }
+  .feat.flip .shot { order: 0; }
+  .lineup-head h2 { font-size: 24px; line-height: 32px; }
+  .copy h3 { font-size: 16px; line-height: 26px; }
+  .copy p { font-size: 17px; line-height: 26px; }
+  .shot .inset { right: -2%; } .feat.flip .shot .inset { left: auto; right: -2%; }
+}
+@media (max-width: 720px) {
+  .main span { font-size: 24px; line-height: 32px; letter-spacing: 1px; }
+  .main { padding: 12px 4px 8px; }
+  .track span { font-size: 16px; line-height: 24px; gap: 24px; padding-right: 24px; }
+  .track b { width: 8px; height: 8px; }
+  .tick { height: 40px; } .track { top: 8px; }
+  #start { font-size: 16px; line-height: 24px; }
+  .tag { font-size: 15px; line-height: 22px; }
+}
+@media (max-width: 520px) { .cue { display: none; } }
+@media (max-width: 380px) { .main span { font-size: 16px; line-height: 24px; } }
+@media (max-height: 560px) and (orientation: landscape) { .tag { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  #start, .track, .wipe, .cue { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .wipe { display: none; }
+}
+</style>
+</head>
+<body>
+<main id="stage">
+  <canvas id="park" class="px" aria-hidden="true"></canvas>
+  <canvas id="fx" class="px" aria-hidden="true"></canvas>
+  <div class="scrim"></div>
+  <div class="ui">
+    <h1 class="sr">Wabbaseball: coming soon</h1>
+    <div id="logo-host" role="img" aria-label="Wabb Baseball logo" title="New ballpark"></div>
+    <section class="board" aria-label="Scoreboard">
+      <div class="chase top" aria-hidden="true"></div>
+      <div class="screen">
+        <div class="main"><span>COMING SOON</span></div>
+        <div class="tick" aria-hidden="true"><div class="track" id="track"></div></div>
+      </div>
+      <div class="chase bot" aria-hidden="true"></div>
+    </section>
+    <p class="sr" id="features"></p>
+    <button id="start" type="button">PRESS START</button>
+    <p class="tag">A retro pixel baseball game built on real stats. Play, manage, sim or just watch, pitch by pitch. Quick Play, Franchise, Homerun Derby, and our signature Battleworld Baseball: draft from every player in every season, then play a short season for the title.</p>
+  </div>
+  <button class="btn diamond" id="reroll" type="button" aria-label="New ballpark" title="New ballpark">
+    <svg viewBox="0 0 16 16" width="24" height="24" shape-rendering="crispEdges" aria-hidden="true">
+      <path fill="#3f9b4a" d="M7 1h2v1h1v1h1v1h1v1h1v1h1v1h1v2h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H7v-1H6v-1H5v-1H4v-1H3v-1H2V9H1V7h1V6h1V5h1V4h1V3h1V2h1z"/>
+      <path fill="#b5733f" d="M7 4h2v1h1v1h1v1h1v2h-1v1h-1v1H9v1H7v-1H6v-1H5V9H4V7h1V6h1V5h1z"/>
+      <path fill="#3f9b4a" d="M7 6h2v1h1v2H9v1H7V9H6V7h1z"/>
+      <path fill="#fff" d="M7 2h2v2H7zM12 7h2v2h-2zM2 7h2v2H2zM7 12h2v2H7z"/>
+    </svg>
+  </button>
+  <footer>
+    <a class="btn" href="https://github.com/Wabbilly" target="_blank" rel="noopener"><span class="xmark" aria-hidden="true">&lt;/&gt;</span> GitHub</a>
+    <a class="btn" href="https://x.com/wabbilly" target="_blank" rel="noopener"><span class="xmark" aria-hidden="true">X</span> @wabbilly</a>
+  </footer>
+  <a class="cue" href="#lineup">WHAT IS WABBASEBALL?<i></i></a>
+</main>
+
+<section class="lineup" id="lineup" aria-labelledby="lineup-title">
+  <div class="lineup-head">
+    <h2 id="lineup-title">WHAT IS WABBASEBALL?</h2>
+    <p class="lede">A retro baseball game built on real numbers. Every big leaguer from 2015 to 2026 gets a card rated from what he actually did that season. Then it's your call: manage every pitch, grab a bat when it matters, or sim straight to October.</p>
+    <ul class="facts">
+      <li><b>30</b> clubs</li>
+      <li><b>12</b> seasons</li>
+      <li><b>11,900+</b> player cards</li>
+      <li><b>30</b> real parks</li>
+    </ul>
+    <figure class="shot hero-shot reveal"><img src="img/menu.webp" width="1404" height="840" loading="lazy" alt="Wabbaseball main menu with Quick Play, Franchise, Battleworld Baseball and Homerun Derby"></figure>
+  </div>
+
+  <div class="block-head" id="modes">
+    <span class="kicker">Main menu</span>
+    <h2>FOUR WAYS TO PLAY</h2>
+  </div>
+  <div class="modes">
+    <article class="mode reveal">
+      <figure class="shot"><img src="img/quickplay.webp" width="1404" height="840" loading="lazy" alt="Quick Game setup: 2026 Orioles at 2026 Yankees with chance to win"></figure>
+      <div class="tile"><h3>QUICK PLAY</h3><p class="sub">One game, any two clubs.</p>
+        <p>Any club from any season since 2015, head to head. The game sizes up the matchup before the first pitch.</p></div>
+    </article>
+    <article class="mode reveal">
+      <figure class="shot"><img src="img/franchise.webp" width="1440" height="900" loading="lazy" alt="Franchise home screen for the 2016 New York Yankees"></figure>
+      <div class="tile"><h3>FRANCHISE</h3><p class="sub">Run a club season after season.</p>
+        <p>Start in any year from 2015 to 2026. Lineups, trades, contracts, the draft and the payroll are all yours.</p></div>
+    </article>
+    <article class="mode reveal">
+      <figure class="shot"><img src="img/battleworld.webp" width="1440" height="900" loading="lazy" alt="Battleworld team builder adding a 117-overall Mike Trout card"></figure>
+      <div class="tile"><h3>BATTLEWORLD BASEBALL</h3><p class="sub">Ten challenges, every season since 2015.</p>
+        <p>Build a roster from any player in any season, then win a league under one rule: one season only, nobody over 85, lefties only, guys from losing teams.</p></div>
+    </article>
+    <article class="mode locked reveal">
+      <figure class="shot"><img src="img/homer.webp" width="1440" height="900" loading="lazy" alt="A home run off the foul pole at Yankee Stadium"><span class="lock">COMING SOON</span></figure>
+      <div class="tile"><h3><i class="padlock" aria-hidden="true"></i>HOMERUN DERBY</h3><p class="sub">Eight sluggers, one night.</p>
+        <p>Pick your eight, swing for the seats. It's in the works.</p></div>
+    </article>
+  </div>
+
+  <div class="block-head" id="cards">
+    <span class="kicker">Browse players</span>
+    <h2>EVERY PLAYER GETS A CARD</h2>
+    <p>Rated from what he did that season, with no ceiling: 99 is an MVP year. Every season has its own card design, and the badge tells you the tier, from Dirt all the way up to Arkenstone.</p>
+  </div>
+  <div class="cardrow">
+    <figure class="pcard reveal"><img src="img/card_judge22.webp" width="763" height="1068" loading="lazy" alt="2022 Aaron Judge card, 123 overall"><figcaption><b>123</b> The best season on file.</figcaption></figure>
+    <figure class="pcard reveal"><img src="img/card_mookie18.webp" width="763" height="1068" loading="lazy" alt="2018 Mookie Betts card, 112 overall"><figcaption><b>112</b> Mookie's MVP year.</figcaption></figure>
+    <figure class="pcard reveal"><img src="img/card_degrom18.webp" width="763" height="1068" loading="lazy" alt="2018 Jacob deGrom card, 99 overall"><figcaption><b>99</b> Fix the Mets? Start here.</figcaption></figure>
+    <figure class="pcard reveal"><img src="img/card_ohtani23.webp" width="763" height="1068" loading="lazy" alt="2023 Shohei Ohtani two-way card"><figcaption><b>TWP</b> Bats and pitches. Obviously.</figcaption></figure>
+  </div>
+
+  <div class="block-head" id="feel">
+    <span class="kicker">Game day</span>
+    <h2>PLAY IT YOUR WAY</h2>
+  </div>
+
+  <article class="feat reveal">
+    <figure class="shot"><img src="img/play.webp" width="1440" height="900" loading="lazy" alt="In-game menu offering to bat, pitch, get in the game or sim"></figure>
+    <div class="copy"><h3>MANAGE, PLAY, OR SIMULATE</h3>
+      <p>Run it from the dugout, step in for one at-bat, or sim to the ninth. Switch any time.</p></div>
+  </article>
+  <article class="feat flip reveal">
+    <figure class="shot"><img src="img/batting.webp" width="1440" height="900" loading="lazy" alt="Hitting view with the contact circle against a pitch"><img class="inset" src="img/pitching.webp" width="1440" height="900" loading="lazy" alt="Pitching view picking a pitch and a spot"></figure>
+    <div class="copy"><h3>BAT AND PITCH YOURSELF</h3>
+      <p>Your timing moves the odds. Their ratings set the ceiling. A .220 hitter won't turn into Judge just because you're good at this.</p></div>
+  </article>
+  <article class="feat reveal">
+    <figure class="shot"><img src="img/mets.webp" width="1440" height="900" loading="lazy" alt="Citi Field from the booth camera"></figure>
+    <div class="copy"><h3>REAL PARKS, REAL WALLS</h3>
+      <p>Every park is built to its real dimensions. The short porch in the Bronx, the Monster in Boston, the ivy at Wrigley.</p></div>
+  </article>
+  <article class="feat flip reveal">
+    <figure class="shot"><img src="img/pregame.webp" width="1404" height="840" loading="lazy" alt="Pregame starting pitchers: Shane Baz against Cam Schlittler"></figure>
+    <div class="copy"><h3>EVERY GAME IS A BROADCAST</h3>
+      <p>Starting pitcher matchups, a live score bug, replays from the camera that caught it.</p></div>
+  </article>
+  <article class="feat reveal">
+    <figure class="shot"><img src="img/dinger.webp" width="1440" height="900" loading="lazy" alt="The Daily Dinger newspaper, October edition"></figure>
+    <div class="copy"><h3>THE DAILY DINGER</h3>
+      <p>Your league gets its own paper. Headlines, standings, the bracket, and a crossword nobody asked for.</p></div>
+  </article>
+</section>
+
+<section class="follow">
+  <h2>FOLLOW ALONG</h2>
+  <p>Clips, updates and the release date land on X first. The code lives on GitHub.</p>
+  <div class="follow-btns">
+    <a class="btn big" href="https://x.com/wabbilly" target="_blank" rel="noopener"><span class="xmark" aria-hidden="true">X</span> FOLLOW @WABBILLY</a>
+    <a class="btn big alt" href="https://github.com/Wabbilly" target="_blank" rel="noopener"><span class="xmark" aria-hidden="true">&lt;/&gt;</span> GITHUB</a>
+  </div>
+</section>
+<footer class="pagefoot"><span class="stamp">&copy; 2026 WABBASEBALL<br>Not affiliated with MLB</span></footer>
+
+<dialog id="zoom" aria-label="Screenshot"><img alt=""></dialog>
+
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <h2 id="dlg-title">TIME OUT!</h2>
+  <p>Wabbaseball is still in spring training.</p>
+  <p>Follow <a href="https://x.com/wabbilly" target="_blank" rel="noopener" style="color:var(--gold)">@wabbilly</a> on X so you don't miss first pitch.</p>
+  <form method="dialog"><button class="ok" value="ok" autofocus><kbd>A</kbd>OK</button></form>
+</dialog>
+
+<script>
+(() => {
+'use strict';
+/* ---------------------------------------------------------------- the game's title-screen art, drawn in code
+   (helpers, the three logos and the made-up pixel ballpark, from design/ui/mockups/logo/LOGO_OPTIONS.html) */
+function mk(w, h) { const c = document.createElement('canvas'); c.width = Math.max(1, w | 0); c.height = Math.max(1, h | 0); c.getContext('2d').imageSmoothingEnabled = false; return c; }
+function g2(c) { const x = c.getContext('2d'); x.imageSmoothingEnabled = false; return x; }
+function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function hash(a, b) { let h = Math.imul(a ^ 0x9e3779b9, 0x85ebca6b) ^ Math.imul(b + 0x632be59b, 0xc2b2ae35); h ^= h >>> 13; h = Math.imul(h, 0x27d4eb2f); h ^= h >>> 16; return (h >>> 0) / 4294967296; }
+
+// one chunky 9-row face for every logo; strokes are two font pixels wide
+const GLYPHS = {
+  W: ['##.....##','##.....##','##.....##','##..#..##','##.###.##','##.###.##','#########','.###.###.','.##...##.'],
+  A: ['..####..','.######.','###..###','##....##','##....##','########','########','##....##','##....##'],
+  B: ['#######.','########','##....##','##...###','#######.','##...###','##....##','########','#######.'],
+  S: ['.#######','########','##......','#######.','.#######','......##','......##','########','#######.'],
+  E: ['########','########','##......','##......','#######.','##......','##......','########','########'],
+  L: ['##......','##......','##......','##......','##......','##......','##......','########','########'],
+};
+function textMask(str, fp, gap = 1) {
+  const gs = [...str].map(ch => GLYPHS[ch]);
+  const wf = gs.reduce((s, g) => s + g[0].length, 0) + gap * (gs.length - 1);
+  const c = mk(wf * fp, 9 * fp), x = g2(c); x.fillStyle = '#fff';
+  let ox = 0;
+  for (const g of gs) { g.forEach((row, r) => { for (let i = 0; i < row.length; i++) if (row[i] === '#') x.fillRect((ox + i) * fp, r * fp, fp, fp); }); ox += g[0].length + gap; }
+  return c;
+}
+function solid(mask, col) { const c = mk(mask.width, mask.height), x = g2(c); x.drawImage(mask, 0, 0); x.globalCompositeOperation = 'source-in'; x.fillStyle = col; x.fillRect(0, 0, c.width, c.height); return c; }
+function bands(mask, stops) {
+  const c = mk(mask.width, mask.height), x = g2(c), h = c.height;
+  stops.forEach((s, i) => { const y0 = Math.round(s[0] * h), y1 = i + 1 < stops.length ? Math.round(stops[i + 1][0] * h) : h; x.fillStyle = s[1]; x.fillRect(0, y0, c.width, y1 - y0); });
+  x.globalCompositeOperation = 'destination-in'; x.drawImage(mask, 0, 0); return c;
+}
+function dilate(mask, r) { // square dilation, result padded by r on every side
+  const w = mask.width + 2 * r, h = mask.height + 2 * r, a = mk(w, h), ax = g2(a);
+  for (let d = -r; d <= r; d++) ax.drawImage(mask, r + d, r);
+  const b = mk(w, h), bx = g2(b); for (let d = -r; d <= r; d++) bx.drawImage(a, 0, d); return b;
+}
+function edge(mask, dx, dy) { const c = mk(mask.width, mask.height), x = g2(c); x.drawImage(mask, 0, 0); x.globalCompositeOperation = 'destination-out'; x.drawImage(mask, dx, dy); return c; }
+function poly(x, pts, col) { // crisp scanline fill, no anti-aliasing
+  x.fillStyle = col; const ys = pts.map(p => p[1]); const y0 = Math.floor(Math.min(...ys)), y1 = Math.ceil(Math.max(...ys));
+  for (let y = y0; y < y1; y++) { const yc = y + 0.5, xs = [];
+    for (let i = 0; i < pts.length; i++) { const [ax, ay] = pts[i], [bx, by] = pts[(i + 1) % pts.length];
+      if ((ay <= yc && by > yc) || (by <= yc && ay > yc)) xs.push(ax + (yc - ay) / (by - ay) * (bx - ax)); }
+    xs.sort((a, b) => a - b);
+    for (let k = 0; k + 1 < xs.length; k += 2) { const a = Math.round(xs[k]), b = Math.round(xs[k + 1]); if (b > a) x.fillRect(a, y, b - a, 1); } }
+}
+function sweep(mask, x0, y0, dx, dy, W, H) { // the silhouette of a mask pushed from 0 to (dx, dy)
+  const c = mk(W, H), x = g2(c), n = Math.max(Math.abs(dx), Math.abs(dy), 1);
+  for (let i = 0; i <= n; i++) x.drawImage(mask, x0 + Math.round(dx * i / n), y0 + Math.round(dy * i / n)); return c;
+}
+function extrude(x, tints, x0, y0, dx, dy) { // tints front to back
+  const n = Math.max(Math.abs(dx), Math.abs(dy)); if (!n) return;
+  for (let i = n; i >= 1; i--) { const k = Math.min(tints.length - 1, Math.floor((i - 1) / n * tints.length)); x.drawImage(tints[k], x0 + Math.round(dx * i / n), y0 + Math.round(dy * i / n)); }
+}
+
+/* ------------------------------------------------------------------ the four logos
+   Sizes are in design pixels; u is how many canvas pixels one design pixel takes. */
+
+// 1. Arcade marquee
+const V1 = {
+  id: 1, name: 'Arcade marquee', T: 4.2, rot: 3, bob: 2, W: 196, H: 112, pivot: [0.5, 0.5],
+  lines: ['Thick gold letters pushed out like an arcade cabinet marquee, with a dark outline, a bevel and a red ribbon banner carrying BASEBALL.',
+          'It tilts a few degrees and bobs; the gold depth swings from side to side as it turns, and a shine runs across the letters once a loop.'],
+  cache: {},
+  base(u) {
+    if (this.cache[u]) return this.cache[u];
+    const W = this.W * u, H = this.H * u, L = textMask('WABB', 4 * u), lx = Math.round((W - L.width) / 2), ly = 8 * u;
+    const T = textMask('BASEBALL', 2 * u), bw = T.width + 22 * u, bh = T.height + 10 * u, bx = Math.round((W - bw) / 2), by = ly + L.height + 9 * u;
+    const art = mk(W, H), a = g2(art), bm = mk(W, H), m = g2(bm);
+    const tailL = [[bx - 16 * u, by + 6 * u], [bx + 8 * u, by + 6 * u], [bx + 8 * u, by + bh + 6 * u], [bx - 16 * u, by + bh + 6 * u], [bx - 8 * u, by + 6 * u + bh / 2]];
+    const tailR = tailL.map(([px, py]) => [2 * bx + bw - px, py]);
+    for (const t of [tailL, tailR]) { poly(a, t, '#8e1d28'); poly(m, t, '#fff'); }
+    a.fillStyle = '#6e1420'; a.fillRect(bx - 12 * u, by + bh + 3 * u, 20 * u, 3 * u); a.fillRect(bx + bw - 8 * u, by + bh + 3 * u, 20 * u, 3 * u);
+    poly(a, [[bx, by + bh], [bx + 8 * u, by + bh + 6 * u], [bx + 8 * u, by + bh]], '#4e0b14');
+    poly(a, [[bx + bw, by + bh], [bx + bw - 8 * u, by + bh + 6 * u], [bx + bw - 8 * u, by + bh]], '#4e0b14');
+    a.fillStyle = '#d2343f'; a.fillRect(bx, by, bw, bh); m.fillStyle = '#fff'; m.fillRect(bx, by, bw, bh);
+    a.fillStyle = '#f0646c'; a.fillRect(bx, by, bw, 3 * u);
+    a.fillStyle = '#a3222d'; a.fillRect(bx, by + bh - 4 * u, bw, 4 * u);
+    for (let sx = bx + 3 * u; sx < bx + bw - 4 * u; sx += 5 * u) { a.fillStyle = '#ffb4b8'; a.fillRect(sx, by + 4 * u, 3 * u, u); a.fillStyle = '#7a1520'; a.fillRect(sx, by + bh - 6 * u, 3 * u, u); }
+    const tx = bx + Math.round((bw - T.width) / 2), ty = by + Math.round((bh - T.height) / 2);
+    a.drawImage(solid(T, '#4a0a12'), tx + u, ty + u);
+    a.drawImage(bands(T, [[0, '#ffffff'], [0.56, '#e2e2ee']]), tx, ty);
+    const face = bands(L, [[0, '#fff6c4'], [0.17, '#ffe27a'], [0.4, '#ffd75e'], [0.62, '#ffbf3a'], [0.83, '#f2a024']]);
+    const hi = solid(edge(L, u, u), '#fffbe8'), lo = solid(edge(L, -u, -u), '#c9780e');
+    const tints = ['#c86f12', '#9c4f08', '#6e3304'].map(c => solid(L, c));
+    return (this.cache[u] = { W, H, L, lx, ly, art, bm, face, hi, lo, tints, byDx: {}, glint: mk(W, H) });
+  },
+  frame(u, p) {
+    const b = this.base(u), dx = Math.round(p.yaw * 6) * u, D = 10 * u;
+    if (!b.byDx[dx]) {
+      const c = mk(b.W, b.H), x = g2(c), sil = sweep(b.L, b.lx, b.ly, dx, D, b.W, b.H);
+      const all = mk(b.W, b.H), ax = g2(all); ax.drawImage(sil, 0, 0); ax.drawImage(b.bm, 0, 0);
+      x.drawImage(solid(dilate(all, 3 * u), '#120a22'), -3 * u, -3 * u);
+      x.drawImage(b.art, 0, 0);
+      x.drawImage(solid(dilate(sil, 2 * u), '#120a22'), -2 * u, -2 * u);
+      extrude(x, b.tints, b.lx, b.ly, dx, D);
+      x.drawImage(b.face, b.lx, b.ly); x.drawImage(b.hi, b.lx, b.ly); x.drawImage(b.lo, b.lx, b.ly);
+      b.byDx[dx] = c;
+    }
+    const out = [b.byDx[dx]];
+    if (!p.still) {
+      const g = (p.t / this.T) % 1;
+      if (g < 0.4) {
+        const gx = g2(b.glint), L = b.L, x0 = b.lx - 20 * u + (g / 0.4) * (L.width + 40 * u), h = L.height;
+        gx.globalCompositeOperation = 'source-over'; gx.clearRect(0, 0, b.W, b.H);
+        poly(gx, [[x0, b.ly], [x0 + 6 * u, b.ly], [x0 + 6 * u - 14 * u, b.ly + h], [x0 - 14 * u, b.ly + h]], '#fffdf0');
+        poly(gx, [[x0 + 10 * u, b.ly], [x0 + 12 * u, b.ly], [x0 - 2 * u, b.ly + h], [x0 - 4 * u, b.ly + h]], '#fffdf0');
+        gx.globalCompositeOperation = 'destination-in'; gx.drawImage(L, b.lx, b.ly);
+        out.push(b.glint);
+      }
+    }
+    return out;
+  },
+};
+
+// 2. Stitched baseball
+const V2 = {
+  id: 2, name: 'Stitched baseball', T: 4.6, rot: 5, bob: 1, W: 200, H: 160, pivot: [0.5, 124 / 160],
+  lines: ['A big shaded pixel baseball with red stitches; WABB rides across it as a navy sticker with a white edge, and BASEBALL curves under the ball in gold.',
+          'The ball rocks on its bottom like a rocking chair while its seams roll a little left and right, as if it were turning in the light.'],
+  cache: {},
+  base(u) {
+    if (this.cache[u]) return this.cache[u];
+    const W = this.W * u, H = this.H * u, cxp = 100, cyp = 70, R = 52;
+    const ball = mk(W, H), bx = g2(ball);
+    const tones = [[0.88, '#ffffff'], [0.66, '#f7f1e2'], [0.40, '#e6dbc2'], [0.12, '#c9b896'], [-9, '#a38f6c']];
+    for (let j = cyp - R - 4; j <= cyp + R + 4; j++) for (let i = cxp - R - 4; i <= cxp + R + 4; i++) {
+      const dx = i + 0.5 - cxp, dy = j + 0.5 - cyp, d = Math.hypot(dx, dy); let col = null;
+      if (d <= R) {
+        const nx = dx / R, ny = dy / R, nz = Math.sqrt(Math.max(0, 1 - nx * nx - ny * ny)), l = -0.45 * nx - 0.55 * ny + 0.7 * nz;
+        let k = tones.findIndex(t => l > t[0]);
+        if (k > 0 && k < tones.length && l - tones[k][0] < 0.035 && (i + j) % 2) k = Math.min(tones.length - 1, k + 1);
+        if (k > 0 && tones[k - 1] && l > tones[k - 1][0] - 0.035 && (i + j) % 2 === 0) k = k - 1;
+        col = tones[k][1];
+        if (d > R - 1.4) col = '#8a7656';
+      } else if (d <= R + 3) col = '#1a120c';
+      if (col) { bx.fillStyle = col; bx.fillRect(i * u, j * u, u, u); }
+    }
+    const L = textMask('WABB', 3 * u), lx = Math.round((W - L.width) / 2), ly = (cyp - 15) * u;
+    const face = bands(L, [[0, '#5a7ee0'], [0.16, '#3554b4'], [0.45, '#25408f'], [0.78, '#1a2c6c']]);
+    const hi = solid(edge(L, u, u), '#9ab4ff');
+    const tints = ['#132058', '#0b1436'].map(c => solid(L, c));
+    // BASEBALL on an arc under the ball
+    const T = textMask('BASEBALL', 2 * u), pad = 4 * u;
+    const flat = mk(T.width + 2 * pad, T.height + 2 * pad + 3 * u), fx = g2(flat);
+    const tsil = sweep(T, pad, pad, 0, 3 * u, flat.width, flat.height);
+    fx.drawImage(solid(dilate(tsil, 2 * u), '#120a22'), -2 * u, -2 * u);
+    extrude(fx, ['#9a5c00', '#6a3e00'].map(c => solid(T, c)), pad, pad, 0, 3 * u);
+    fx.drawImage(bands(T, [[0, '#fff3b0'], [0.4, '#ffd75e'], [0.75, '#f0a828']]), pad, pad);
+    const arc = mk(W, H), ac = g2(arc), ax0 = Math.round((W - flat.width) / 2), half = flat.width / 2, topY = 127 * u;
+    for (let c = 0; c < flat.width; c += u) { const xn = (c + u / 2 - half) / half, dy = Math.round(xn * xn * 9) * u; ac.drawImage(flat, c, 0, u, flat.height, ax0 + c, topY - dy, u, flat.height); }
+    return (this.cache[u] = { W, H, R, cxp, cyp, ball, L, lx, ly, face, hi, tints, arc, byKey: {} });
+  },
+  seams(x, u, b, s) {
+    const { R, cxp, cyp } = b;
+    const inside = (i, j) => Math.hypot(i + 0.5 - cxp, j + 0.5 - cyp) < R - 2;
+    const px = (i, j, col) => { if (inside(i, j)) { x.fillStyle = col; x.fillRect(i * u, j * u, u, u); } };
+    for (const side of [-1, 1]) {
+      for (let yy = -Math.floor(0.9 * R); yy <= Math.floor(0.9 * R); yy++) {
+        const q = yy / (0.9 * R), xs = Math.round(cxp + side * (0.8 * R - 0.34 * R * (1 - q * q)) + s), j = cyp + yy;
+        px(xs, j, '#c4b391');
+        if (((yy % 6) + 6) % 6 === 0 && Math.abs(xs - cxp) < 0.86 * R) {
+          for (let k = 1; k <= 3; k++) { px(xs - k, j - k + 1, '#d8262e'); px(xs + k, j - k + 1, '#d8262e'); px(xs - k, j - k + 2, '#8a1418'); px(xs + k, j - k + 2, '#8a1418'); }
+          px(xs, j + 1, '#d8262e');
+        }
+      }
+    }
+  },
+  frame(u, p) {
+    const b = this.base(u), key = Math.round(p.yaw * 9);
+    if (!b.byKey[key]) {
+      const c = mk(b.W, b.H), x = g2(c), dx = Math.round(-key * 4 / 9) * u, D = 6 * u;
+      x.drawImage(b.ball, 0, 0); this.seams(x, u, b, key);
+      const sil = sweep(b.L, b.lx, b.ly, dx, D, b.W, b.H);
+      x.drawImage(solid(dilate(sil, 4 * u), '#0b0b12'), -4 * u, -4 * u);
+      x.drawImage(solid(dilate(sil, 2 * u), '#ffffff'), -2 * u, -2 * u);
+      extrude(x, b.tints, b.lx, b.ly, dx, D);
+      x.drawImage(b.face, b.lx, b.ly); x.drawImage(b.hi, b.lx, b.ly);
+      x.drawImage(b.arc, 0, 0);
+      b.byKey[key] = c;
+    }
+    return [b.byKey[key]];
+  },
+};
+
+// 3. Jumbotron
+const V3 = {
+  id: 3, name: 'Scoreboard bulbs', T: 4.0, rot: 2.5, bob: 1, W: 196, H: 120, pivot: [0.5, 0.0],
+  lines: ['WABB spelled in amber bulbs on a steel-framed scoreboard that hangs from two cables, with BASEBALL in white bulbs below and chase lights in the frame.',
+          'It swings gently from the top like a hung sign; a few bulbs flicker, a bright line sweeps down the board and the frame lights chase around.'],
+  cache: {},
+  base(u) {
+    if (this.cache[u]) return this.cache[u];
+    const W = this.W * u, H = this.H * u;
+    const F = { x: 12, y: 16, w: 172, h: 84, t: 7 }, S = { x: 19, y: 23, w: 158, h: 70 }, cols = 79, rows = 35;
+    const grid = new Uint8Array(cols * rows);
+    const put = (str, fp, c0, r0, type) => { const m = textMask(str, 1), d = g2(m).getImageData(0, 0, m.width, m.height).data;
+      for (let j = 0; j < m.height; j++) for (let i = 0; i < m.width; i++) if (d[(j * m.width + i) * 4 + 3]) for (let a = 0; a < fp; a++) for (let bb = 0; bb < fp; bb++) grid[(r0 + j * fp + bb) * cols + c0 + i * fp + a] = type; };
+    put('WABB', 2, 3, 3, 1); put('BASEBALL', 1, 4, 24, 2);
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) if (!grid[r * cols + c]) {
+      let near = 0; for (let dr = -1; dr <= 1; dr++) for (let dc = -1; dc <= 1; dc++) { const rr = r + dr, cc = c + dc; if (rr >= 0 && rr < rows && cc >= 0 && cc < cols) { const g = grid[rr * cols + cc]; if (g === 1 || g === 2) near = g; } }
+      if (near) grid[r * cols + c] = near + 2;
+    }
+    const lit = []; for (let i = 0; i < grid.length; i++) if (grid[i] === 1 || grid[i] === 2) lit.push(i);
+    const chase = []; const mx0 = F.x + 3, my0 = F.y + 3, mx1 = F.x + F.w - 5, my1 = F.y + F.h - 5;
+    for (let xx = mx0; xx <= mx1; xx += 8) { chase.push([xx, my0]); }
+    for (let yy = my0 + 8; yy <= my1; yy += 8) chase.push([mx1, yy]);
+    for (let xx = mx1 - 8; xx >= mx0; xx -= 8) chase.push([xx, my1]);
+    for (let yy = my1 - 8; yy > my0; yy -= 8) chase.push([mx0, yy]);
+    const frameMask = mk(W, H); { const m = g2(frameMask); m.fillStyle = '#fff'; m.fillRect(F.x * u, F.y * u, F.w * u, F.h * u); }
+    return (this.cache[u] = { W, H, F, S, cols, rows, grid, lit, chase, frameMask, byDx: {}, over: mk(W, H) });
+  },
+  bulb(x, u, b, i, col, hl) {
+    const c = i % b.cols, r = (i / b.cols) | 0, X = (b.S.x + 1 + c * 2) * u, Y = (b.S.y + 0.5 + r * 2) * u, g = b.grid[i], s = u >= 2 ? 2 * u - 1 : (g === 1 || g === 2 ? 2 : 1);
+    x.fillStyle = col; x.fillRect(X, Math.round(Y), s, s);
+    if (hl && u >= 2) { x.fillStyle = hl; x.fillRect(X, Math.round(Y), 1, 1); }
+  },
+  frame(u, p) {
+    const b = this.base(u), dx = Math.round(p.yaw * 5) * u, D = 7 * u, { F, S } = b;
+    if (!b.byDx[dx]) {
+      const c = mk(b.W, b.H), x = g2(c), R = (a, y, w, h, col) => { x.fillStyle = col; x.fillRect(a * u, y * u, w * u, h * u); };
+      for (const cx0 of [46, 148]) { R(cx0, 0, 2, F.y + 2, '#2a2d3c'); R(cx0, 0, 1, F.y + 2, '#9a9eb8'); R(cx0 - 2, F.y - 3, 6, 3, '#474b62'); }
+      const sil = sweep(b.frameMask, 0, 0, dx, D, b.W, b.H);
+      x.drawImage(solid(dilate(sil, 2 * u), '#06060a'), -2 * u, -2 * u);
+      extrude(x, ['#3a3e52', '#2a2d3c', '#1c1e28'].map(col => solid(b.frameMask, col)), 0, 0, dx, D);
+      R(F.x, F.y, F.w, F.h, '#7d8299');
+      R(F.x, F.y, F.w, 2, '#c9cde0'); R(F.x, F.y, 2, F.h, '#b3b8cc');
+      R(F.x, F.y + F.h - 2, F.w, 2, '#474b62'); R(F.x + F.w - 2, F.y, 2, F.h, '#555970');
+      R(S.x - 1, S.y - 1, S.w + 2, 1, '#3c4054'); R(S.x - 1, S.y - 1, 1, S.h + 2, '#3c4054');
+      R(S.x - 1, S.y + S.h, S.w + 2, 1, '#d6d9ea'); R(S.x + S.w, S.y - 1, 1, S.h + 2, '#d6d9ea');
+      R(S.x, S.y, S.w, S.h, '#05050a');
+      const tones = [['#181824'], ['#ffb43c', '#fff0c4'], ['#dde8ff', '#ffffff'], ['#2c1a08'], ['#141a28']];
+      for (let i = 0; i < b.grid.length; i++) { const t = tones[b.grid[i]]; this.bulb(x, u, b, i, t[0], t[1]); }
+      R(S.x, S.y, S.w, 1, '#000000');
+      b.byDx[dx] = c;
+    }
+    const o = g2(b.over); o.clearRect(0, 0, b.W, b.H);
+    const step = p.still ? 0 : Math.floor(p.t * 6);
+    b.chase.forEach(([cx0, cy0], i) => {
+      const on = p.still ? i % 2 === 0 : (i + step) % 4 < 2;
+      o.fillStyle = '#2a2a1a'; o.fillRect((cx0 - 0.5) * u, (cy0 - 0.5) * u, 3 * u, 3 * u);
+      o.fillStyle = on ? '#fff2b0' : '#7a6024'; o.fillRect(cx0 * u, cy0 * u, 2 * u, 2 * u);
+    });
+    if (!p.still) {
+      const tick = Math.floor(p.t * 12), band = ((p.t / this.T) % 1) * (b.rows + 14) - 7;
+      for (const i of b.lit) {
+        const r = (i / b.cols) | 0, type = b.grid[i];
+        if (r >= band && r < band + 2) this.bulb(o, u, b, i, type === 1 ? '#fff7dc' : '#ffffff', '#ffffff');
+        else if (type === 1 && hash(i, tick) < 0.025) this.bulb(o, u, b, i, '#9a5c18', null);
+      }
+    }
+    return [b.byDx[dx], b.over];
+  },
+};
+
+// 4. Felt pennant
+const V4 = {
+  id: 4, name: 'Felt pennant', T: 4.8, rot: 2, bob: 1, W: 290, H: 170, pivot: [11 / 290, 8 / 170],
+  lines: ['A felt ballpark pennant on a wooden stick: WABB big in white varsity letters with a gold edge, BASEBALL small in gold underneath, and a sewn-on header with a ball.',
+          'The felt waves along its length with bands of light and shadow, the tip moving most, while the stick sways a little from the top.'],
+  cache: {},
+  base(u) {
+    if (this.cache[u]) return this.cache[u];
+    const W = this.W * u, H = this.H * u, L = 262, Hh = 112, top = 6;
+    const tex = mk((L + 6) * u, (Hh + 12) * u), x = g2(tex);
+    const U = pts => pts.map(([a, b]) => [a * u, (b + top) * u]);
+    poly(x, U([[0, -2], [L + 5, Hh / 2], [0, Hh + 2]]), '#1c0710');
+    poly(x, U([[0, 0], [L, Hh / 2], [0, Hh]]), '#f0c050');
+    poly(x, U([[0, 1.5], [L - 3, Hh / 2], [0, Hh - 1.5]]), '#a87a20');
+    poly(x, U([[0, 3], [L - 7, Hh / 2], [0, Hh - 3]]), '#9e1f30');
+    const r = rng(42), inFelt = (i, j) => i < L - 8 && Math.abs(j + 0.5 - Hh / 2) < (Hh / 2 - 3.5) * (1 - (i + 0.5) / (L - 7));
+    for (let j = 0; j < Hh; j++) for (let i = 0; i < L; i++) if (inFelt(i, j)) { const v = r(); if (v < 0.12) { x.fillStyle = '#8a1828'; x.fillRect(i * u, (j + top) * u, u, u); } else if (v < 0.16) { x.fillStyle = '#b22c3e'; x.fillRect(i * u, (j + top) * u, u, u); } }
+    // sewn header
+    for (let i = 0; i < 24; i++) { const hh = (Hh / 2 - 3) * (1 - (i + 0.5) / (L - 7)), y0 = Math.ceil(Hh / 2 - hh), y1 = Math.floor(Hh / 2 + hh);
+      for (let j = y0; j < y1; j++) { x.fillStyle = (r() < 0.12) ? '#ddd2b6' : '#efe7d2'; x.fillRect(i * u, (j + top) * u, u, u); }
+      if (i === 21) for (let j = y0 + 1; j < y1 - 1; j++) if (j % 4 < 2) { x.fillStyle = '#7a1626'; x.fillRect(i * u, (j + top) * u, u, u); } }
+    { const bc = 11, br = Hh / 2, rad = 7;
+      for (let j = -rad - 1; j <= rad + 1; j++) for (let i = -rad - 1; i <= rad + 1; i++) { const d = Math.hypot(i + 0.5, j + 0.5);
+        if (d <= rad + 1) { x.fillStyle = d > rad ? '#2a1a12' : (i + j < -2 ? '#ffffff' : '#e6dbc2'); x.fillRect((bc + i) * u, (br + j + top) * u, u, u); } }
+      for (let j = -5; j <= 4; j += 2) for (const sx of [-4, 3]) { x.fillStyle = '#d8262e'; x.fillRect((bc + sx + (Math.abs(j) > 3 ? (sx < 0 ? -1 : 1) : 0)) * u, (br + j + top) * u, u, u); } }
+    // WABB, varsity
+    const Lm = textMask('WABB', 3 * u), lx = 31 * u, ly = Math.round((Hh / 2 - 4.5 - 13.5 + top) * u);
+    const sil = sweep(Lm, lx, ly, 0, 3 * u, tex.width, tex.height);
+    x.drawImage(solid(dilate(sil, 3 * u), '#2a0810'), -3 * u, -3 * u);
+    x.drawImage(solid(dilate(sil, u), '#f2c14e'), -u, -u);
+    extrude(x, ['#5a0e18'].map(c => solid(Lm, c)), lx, ly, 0, 3 * u);
+    x.drawImage(bands(Lm, [[0, '#ffffff'], [0.5, '#f3eee0'], [0.82, '#ddd5c0']]), lx, ly);
+    const Tm = textMask('BASEBALL', u), tx = 34 * u, ty = Math.round((Hh / 2 + 21 - 4.5 + top) * u);
+    x.drawImage(solid(dilate(Tm, u), '#2a0810'), tx - u, ty - u);
+    x.drawImage(solid(Tm, '#5a0e18'), tx + u, ty + u);
+    x.drawImage(bands(Tm, [[0, '#fff0a0'], [0.5, '#ffd75e'], [0.8, '#f0b030']]), tx, ty);
+    const light = mk(tex.width, tex.height), lg = g2(light); lg.drawImage(tex, 0, 0); lg.globalCompositeOperation = 'source-atop'; lg.fillStyle = 'rgba(255,255,255,0.14)'; lg.fillRect(0, 0, tex.width, tex.height);
+    const dark = mk(tex.width, tex.height), dg = g2(dark); dg.drawImage(tex, 0, 0); dg.globalCompositeOperation = 'source-atop'; dg.fillStyle = 'rgba(0,0,0,0.26)'; dg.fillRect(0, 0, tex.width, tex.height);
+    const back = solid(tex, '#16050c');
+    // stick and knob
+    const pole = mk(W, H), pg = g2(pole), P = (a, b2, w, h, c) => { pg.fillStyle = c; pg.fillRect(a * u, b2 * u, w * u, h * u); };
+    P(7, 10, 8, 158, '#1c0f06'); P(8, 10, 6, 157, '#8a5a2b'); P(8, 10, 2, 157, '#c08850'); P(13, 10, 1, 157, '#5a3815');
+    for (let j = -6; j <= 6; j++) for (let i = -6; i <= 6; i++) { const d = Math.hypot(i + 0.5, j + 0.5); if (d <= 6) P(11 + i - 0.5, 8 + j, 1, 1, d > 5 ? '#3a2604' : (i + j < -3 ? '#fff0a0' : '#e8b840')); }
+    return (this.cache[u] = { W, H, L, tex, light, dark, back, pole, x0: 14, y0: 20, comp: mk(W, H) });
+  },
+  frame(u, p) {
+    const b = this.base(u), c = b.comp, x = g2(c); x.clearRect(0, 0, b.W, b.H);
+    const t = p.still ? this.T * 0.18 : p.t, cols = b.tex.width / u;
+    const wave = i => { const f = i / b.L, ph = 2 * Math.PI * (i / (0.82 * b.L)) - 2 * Math.PI * t / this.T; return { dy: Math.round(7 * Math.pow(f, 0.9) * Math.sin(ph)), s: f > 0.08 ? Math.cos(ph) : 0 }; };
+    for (let i = 0; i < cols; i++) { const w = wave(i); x.drawImage(b.back, i * u, 0, u, b.tex.height, (b.x0 + i + 2) * u, (b.y0 + w.dy + 3) * u, u, b.tex.height); }
+    for (let i = 0; i < cols; i++) { const w = wave(i), src = w.s > 0.55 ? b.light : w.s < -0.55 ? b.dark : b.tex; x.drawImage(src, i * u, 0, u, b.tex.height, (b.x0 + i) * u, (b.y0 + w.dy) * u, u, b.tex.height); }
+    x.drawImage(b.pole, 0, 0);
+    return [c];
+  },
+};
+const VERSIONS = [V1, V2, V3, V4];
+
+/* ------------------------------------------------------------------ animated view of one logo */
+const views = [];
+function pose(v, t, still) {
+  if (still) return { rot: 0, yaw: 0.45, bob: 0, t: 0, still: true };
+  const w = 2 * Math.PI * t / v.T;
+  return { rot: v.rot * Math.PI / 180 * Math.sin(w), yaw: Math.cos(w), bob: -v.bob * Math.sin(2 * w), t, still: false };
+}
+class LogoView {
+  constructor(v, u, scale) {
+    this.v = v; this.u = u; this.scale = scale; const W = v.W * u, H = v.H * u;
+    this.pad = Math.ceil(Math.max(W, H) * 0.07) + (v.bob + 2) * u;
+    this.canvas = mk(W + 2 * this.pad, H + 2 * this.pad); this.ctx = g2(this.canvas);
+    this.cssW = this.canvas.width * scale; this.cssH = this.canvas.height * scale;
+    this.canvas.style.width = this.cssW + 'px'; this.canvas.style.height = this.cssH + 'px';
+    this.visible = true; views.push(this);
+  }
+  draw(t, still) {
+    const v = this.v, u = this.u, p = pose(v, t, still), layers = v.frame(u, p), x = this.ctx;
+    x.setTransform(1, 0, 0, 1, 0, 0); x.clearRect(0, 0, this.canvas.width, this.canvas.height); x.imageSmoothingEnabled = false;
+    const pvx = v.pivot[0] * v.W * u, pvy = v.pivot[1] * v.H * u;
+    x.translate(Math.round(this.pad + pvx), Math.round(this.pad + pvy + p.bob * u));
+    x.rotate(Math.round(p.rot * 180 / Math.PI * 8) / 8 * Math.PI / 180);
+    x.translate(-pvx, -pvy);
+    for (const l of layers) x.drawImage(l, 0, 0);
+  }
+}
+
+const parkCache = {};
+function park(W, mode) { // mode: 'day' | 'dusk' | 'night' (true / false still mean night / day)
+  if (mode === true) mode = 'night'; if (mode === false) mode = 'day';
+  const night = mode !== 'day', dusk = mode === 'dusk';
+  const key = W + mode; if (parkCache[key]) return parkCache[key];
+  const H = Math.round(W * 0.625), c = mk(W, H), x = g2(c);
+  const R = (a, b, w, h, col) => { x.fillStyle = col; x.fillRect(Math.round(a), Math.round(b), Math.round(w), Math.round(h)); };
+  const sky = dusk ? ['#241a48', '#3a2160', '#5e2a6a', '#8e3866', '#c44e5a', '#e8774a', '#f8a85a']
+    : night ? ['#06071a', '#0a0c24', '#10112e', '#171638', '#201c44', '#2c2250', '#3a2a5a'] : ['#2a68cc', '#3577d6', '#4386de', '#5596e6', '#68a7ec', '#7eb8f0', '#96c8f4'];
+  const skyH = Math.round(H * 0.5), bh = Math.ceil(skyH / sky.length); sky.forEach((col, i) => R(0, i * bh, W, bh, col));
+  const rs = rng(5);
+  if (mode === 'night') {
+    for (let i = 0; i < 90; i++) R(rs() * W, rs() * H * 0.42, 1, 1, rs() < 0.3 ? '#ffffff' : '#7a7ab0');
+    R(W * 0.85, H * 0.06, 7, 7, '#f4f0d8'); R(W * 0.85 + 4, H * 0.06 + 1, 3, 4, '#c9c4a6');
+  } else {
+    if (dusk) {
+      for (let i = 0; i < 24; i++) R(rs() * W, rs() * H * 0.12, 1, 1, '#c8b8e8');
+      // the low sun, half behind the stands, in stepped rings
+      const sx = W * 0.82, sy = H * 0.31;
+      for (const [r, col] of [[16, '#f8b860'], [12, '#ffcf70'], [9, '#ffe08a'], [6, '#fff0b8']]) for (let j = -r; j <= 0; j++) { const hw = Math.round(Math.sqrt(r * r - j * j)); R(sx - hw, sy + j, hw * 2, 1, col); }
+    }
+    const cc = dusk ? ['#f4a0a0', '#c86a80'] : ['#ffffff', '#cfe2f6'];
+    const cloud = (cx0, cy0, s) => { R(cx0, cy0, s * 8, s, cc[0]); R(cx0 + s, cy0 - s, s * 5, s, cc[0]); R(cx0 + s * 2, cy0 - s * 2, s * 2, s, cc[0]); R(cx0 + s, cy0 + s, s * 7, 1, cc[1]); };
+    cloud(W * 0.05, H * 0.10, 3); cloud(W * 0.30, H * 0.05, 2); cloud(W * 0.66, H * 0.09, 3); cloud(W * 0.84, H * 0.20, 2);
+  }
+  const yRoof = H * 0.30, yMid = Math.round(H * 0.43), yWall = Math.round(H * 0.53), yTrack = Math.round(H * 0.585), yGrass = Math.round(H * 0.61);
+  const sbL = Math.round(W * 0.37), sbR = Math.round(W * 0.63);
+  // light towers
+  const towers = [0.07, 0.25, 0.75, 0.93];
+  for (const f of towers) {
+    const tx = Math.round(W * f), ty = Math.round(H * 0.05), bw = 22, bhh = 9;
+    R(tx - 1, ty + bhh, 2, yRoof - ty - bhh + 6, night ? '#2a2c3a' : '#6a6e7e');
+    if (night) {
+      for (let j = -4; j < bhh + 4; j++) for (let i = -4; i < bw + 4; i++) { if (i >= 0 && i < bw && j >= 0 && j < bhh) continue; const d = Math.max(i < 0 ? -i : i >= bw ? i - bw + 1 : 0, j < 0 ? -j : j >= bhh ? j - bhh + 1 : 0); if ((i + j) % 2 === 0 && d <= 2) R(tx - bw / 2 + i, ty + j, 1, 1, '#e8d890'); else if ((i * 3 + j) % 4 === 0 && d <= 4) R(tx - bw / 2 + i, ty + j, 1, 1, '#7a7050'); }
+    }
+    R(tx - bw / 2, ty, bw, bhh, night ? '#3a3a44' : '#5a5e6e');
+    for (let j = 1; j < bhh - 1; j += 2) for (let i = 1; i < bw - 1; i += 2) R(tx - bw / 2 + i, ty + j, 1, 1, night ? '#fffef0' : '#c4c8d2');
+  }
+  // stands (same crowd by night and day)
+  const rc = rng(17), crowdN = ['#e8e8f0', '#c83a3a', '#3a5ac8', '#f0c040', '#2a2a3a', '#8a5a3a', '#40a060', '#d07a30', '#f0d0b0', '#5a3a2a', '#ffffff', '#9a2a6a'];
+  const seat = night ? '#24407a' : '#2a4a8a';
+  for (let xx = 0; xx < W; xx++) {
+    if (xx >= sbL && xx < sbR) continue;
+    const toC = xx < sbL ? xx / sbL : (W - 1 - xx) / (W - sbR);
+    const top = Math.round(yRoof + toC * H * 0.05);
+    R(xx, top - 4, 1, 3, night ? '#262a38' : '#5a6070'); R(xx, top - 4, 1, 1, night ? '#5a5e70' : '#c8ccd6');
+    if (xx % 18 === 0) R(xx, top - 4, 1, 4, night ? '#1a1c26' : '#3a3e4a');
+    for (let yy = top - 1; yy < yWall; yy++) {
+      if (yy >= yMid - 3 && yy < yMid + 1) continue;
+      const col = rc() < 0.72 ? crowdN[(rc() * crowdN.length) | 0] : seat;
+      R(xx, yy, 1, 1, (yy % 2) ? col : (rc() < 0.5 ? col : seat));
+    }
+  }
+  // facade between decks with made-up ad blocks
+  for (let xx = 0; xx < W; xx++) if (xx < sbL || xx >= sbR) R(xx, yMid - 3, 1, 4, '#1e2c50');
+  const adc = ['#c83a3a', '#f0c040', '#3a8ad0', '#e8e8f0', '#40a060'];
+  for (let xx = 4, k = 0; xx < W - 14; xx += 26, k++) if (xx + 16 < sbL || xx > sbR) { R(xx, yMid - 2, 16, 2, adc[k % adc.length]); }
+  // centre-field video board and batter's eye
+  const sbT = Math.round(H * 0.12);
+  R(sbL, sbT, sbR - sbL, yWall - sbT, '#22252f'); R(sbL, sbT, sbR - sbL, 1, '#4a4e62'); R(sbL, sbT, 1, yWall - sbT, '#4a4e62'); R(sbR - 1, sbT, 1, yWall - sbT, '#15161c');
+  const vT = sbT + 3, vB = Math.round(H * 0.29), rv = rng(23);
+  const vid = night ? ['#3a5ac8', '#5a7ae0', '#c83a3a', '#f0c040', '#2a8a4a', '#e8e8f0', '#1a1c2a'] : ['#2f4ea8', '#4a68c0', '#a83434', '#d8ac38', '#2a7a44', '#c8c8d4', '#1a1c2a'];
+  for (let yy = vT; yy < vB; yy += 2) for (let xx = sbL + 3; xx < sbR - 3; xx += 2) R(xx, yy, 2, 2, vid[(rv() * vid.length) | 0]);
+  const lT = vB + 3, lB = Math.round(H * 0.385);
+  R(sbL + 3, lT, sbR - sbL - 6, lB - lT, '#08080c');
+  for (let yy = lT + 1; yy < lB - 1; yy += 2) for (let xx = sbL + 4; xx < sbR - 4; xx += 2) if (rv() < 0.45) R(xx, yy, 1, 1, night ? (rv() < 0.7 ? '#ffb43c' : '#e8e8f0') : '#a87830');
+  R(sbL + 3, lB + 2, sbR - sbL - 6, yWall - lB - 2, night ? '#123622' : '#1a4a2c');
+  for (const f of [0.42, 0.5, 0.58]) { const fx = Math.round(W * f); R(fx, sbT - 10, 1, 10, '#c8ccd6'); R(fx + 1, sbT - 10, 6, 4, f === 0.5 ? '#e8e8f0' : f < 0.5 ? '#c83a3a' : '#3a5ac8'); }
+  // wall
+  R(0, yWall, W, yTrack - yWall, night ? '#1a5032' : '#1d5636'); R(0, yWall, W, 1, '#ffd75e');
+  const rw = rng(31);
+  for (let xx = 6, k = 0; xx < W - 20; xx += 34, k++) { if (xx > sbL - 10 && xx < sbR) continue; R(xx, yWall + 2, 22, yTrack - yWall - 3, adc[(k + 2) % adc.length]); for (let i = 0; i < 6; i++) R(xx + 2 + rw() * 18, yWall + 3 + rw() * (yTrack - yWall - 6), 2, 1, '#14141f'); }
+  R(Math.round(W * 0.03), Math.round(H * 0.2), 1, yTrack - H * 0.2, '#ffd75e'); R(Math.round(W * 0.97), Math.round(H * 0.2), 1, yTrack - H * 0.2, '#ffd75e');
+  R(0, yTrack, W, yGrass - yTrack, night ? '#8a5530' : '#9c6234');
+  // grass with mow stripes
+  const gA = night ? '#3a9a4c' : '#3f9b4a', gB = night ? '#2f8441' : '#36893f';
+  for (let yy = yGrass, i = 0; yy < H; i++) { const hgt = Math.round(2 + i * 1.3); for (let xx = 0; xx < W; xx += 24) R(xx, yy, 12, hgt, (i % 2) ? gA : gB), R(xx + 12, yy, 12, hgt, (i % 2) ? gB : gA); yy += hgt; }
+  // infield dirt arc, inner grass, mound, bases
+  const ell = (cx0, cy0, rx, ry, col, ytop) => { for (let yy = Math.max(ytop || 0, Math.floor(cy0 - ry)); yy < H; yy++) { const q = (yy + 0.5 - cy0) / ry; if (Math.abs(q) > 1) continue; const hw = rx * Math.sqrt(1 - q * q); R(cx0 - hw, yy, hw * 2, 1, col); } };
+  ell(W / 2, H * 1.14, W * 0.47, H * 0.42, night ? '#a8683a' : '#b5733f');
+  ell(W / 2, H * 1.14, W * 0.31, H * 0.27, night ? '#3a9a4c' : '#3f9b4a');
+  ell(W / 2, H * 0.94, W * 0.05, H * 0.02, night ? '#a8683a' : '#b5733f'); R(W / 2 - 2, H * 0.94, 4, 1, '#ffffff');
+  R(W / 2 - 2, H * 0.735, 4, 2, '#ffffff'); R(W * 0.8, H * 0.9, 4, 2, '#ffffff'); R(W * 0.2 - 4, H * 0.9, 4, 2, '#ffffff');
+  return (parkCache[key] = c);
+}
+
+
+/* ---------------------------------------------------------------- the coming-soon page */
+const FEATURES = ['MANAGE YOUR OWN FRANCHISE', 'MANAGE, PLAY, OR SIMULATE.', 'REAL PLAYERS. REAL STATS.', 'BUILD A DYNASTY', 'BAT AND PITCH YOURSELF', 'HOME RUN DERBY', 'FIX THE METS', 'PLAY FROM 2015-2026', 'EARLIER YEARS COMING SOON'];
+const ROT = [V1, V2, V3], TIMES = ['day', 'dusk', 'night'];
+const mq = matchMedia('(prefers-reduced-motion: reduce)');
+let still = mq.matches;
+
+// same rule as the game's title screen: a random logo and time of day, never the exact pair shown last time
+function pickCombo(prev) { let c; do { c = { logo: (Math.random() * 3) | 0, time: TIMES[(Math.random() * 3) | 0] }; } while (prev && c.logo === prev.logo && c.time === prev.time); return c; }
+let combo; { let prev = null; try { prev = JSON.parse(localStorage.getItem('wabb-site-last') || 'null'); } catch (e) {} combo = pickCombo(prev); }
+const remember = () => { try { localStorage.setItem('wabb-site-last', JSON.stringify(combo)); } catch (e) {} };
+remember();
+
+const stage = document.getElementById('stage'), parkC = document.getElementById('park'), fxC = document.getElementById('fx');
+const host = document.getElementById('logo-host'), board = document.querySelector('.board');
+const P = { W: 0, H: 0 };
+let lv = null, lastT = 0;
+
+// ticker text, written twice so the crawl loops without a seam
+{ const track = document.getElementById('track'); for (let k = 0; k < 2; k++) { const s = document.createElement('span'); FEATURES.forEach(f => { s.append(f); s.appendChild(document.createElement('b')); }); track.appendChild(s); }
+  document.getElementById('features').textContent = FEATURES.join(', ') + '.'; }
+// chase lights along the frame
+document.querySelectorAll('.chase').forEach(c => { for (let i = 0; i < 40; i++) c.appendChild(document.createElement('i')); });
+const bulbs = [...document.querySelectorAll('.chase.top i'), ...[...document.querySelectorAll('.chase.bot i')].reverse()];
+
+function layout() {
+  const vw = stage.clientWidth, vh = stage.clientHeight;
+  // the park covers the window at a whole-number pixel scale
+  const s = Math.max(2, Math.min(5, Math.round(Math.min(vw, vh * 1.6) / 360)));
+  const W = Math.ceil(Math.max(vw, vh / 0.625) / s) + 1, src = park(W, combo.time), H = src.height;
+  P.W = W; P.H = H;
+  for (const c of [parkC, fxC]) { c.width = W; c.height = H; c.style.width = W * s + 'px'; c.style.height = H * s + 'px'; c.style.left = Math.round((vw - W * s) / 2) + 'px'; c.style.top = Math.round((vh - H * s) / 2) + 'px'; }
+  g2(parkC).drawImage(src, 0, 0);
+  // the logo gets whatever height the scoreboard and press start leave
+  const v = ROT[combo.logo], padD = Math.max(v.W, v.H) * 0.07 + v.bob + 2, tw = v.W + 2 * padD, th = v.H + 2 * padD;
+  const used = board.offsetHeight + 190 + (vw <= 720 ? 40 : 60);
+  let D = Math.min(0.94 * vw / tw, Math.max(0.6 * vh * 0.42, vh - used) / th, 4.5);
+  D = D >= 1 ? Math.floor(D * 4) / 4 : Math.max(0.6, D);
+  const u = Math.max(1, Math.floor(D));
+  views.length = 0; lv = new LogoView(v, u, D / u);
+  host.style.width = Math.round(lv.cssW) + 'px'; host.style.height = Math.round(lv.cssH * 0.9) + 'px';
+  lv.canvas.style.top = Math.round(-lv.cssH * 0.05) + 'px';
+  host.replaceChildren(lv.canvas);
+  lv.draw(lastT, still); drawFx(lastT);
+}
+
+/* ---------------------------------------------------------------- a home run every so often, with fireworks after dark */
+let hr = null, parts = [], nextHR = 4;
+function launch(t) {
+  const W = P.W, H = P.H, left = Math.random() < 0.5;
+  const tx = W * (left ? 0.12 + Math.random() * 0.2 : 0.68 + Math.random() * 0.2);
+  hr = { t0: t, d: 2.4, x0: W / 2, y0: H * 0.93, x1: tx, y1: H * (0.36 + Math.random() * 0.1), apex: H * (0.5 + Math.random() * 0.12) };
+}
+function burst(t, x, y, n, cols, sp) { for (let i = 0; i < n; i++) { const a = Math.random() * Math.PI * 2, v = sp * (0.4 + Math.random() * 0.6); parts.push({ x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, t0: t, life: 1.1 + Math.random() * 0.6, c: cols[(Math.random() * cols.length) | 0] }); } }
+function drawFx(t) {
+  const x = g2(fxC); x.clearRect(0, 0, fxC.width, fxC.height);
+  if (still) return;
+  if (!hr && t >= nextHR) launch(t);
+  if (hr) {
+    const p = Math.min(1, (t - hr.t0) / hr.d);
+    const pos = q => [hr.x0 + (hr.x1 - hr.x0) * q, hr.y0 + (hr.y1 - hr.y0) * q - hr.apex * 4 * q * (1 - q)];
+    for (let k = 3; k >= 1; k--) { const q = p - k * 0.025; if (q > 0) { const [a, b] = pos(q); x.fillStyle = 'rgba(255,255,255,' + (0.5 - k * 0.12) + ')'; x.fillRect(Math.round(a), Math.round(b), 1, 1); } }
+    const [bx, by] = pos(p), sz = p < 0.55 ? 2 : 1;
+    x.fillStyle = '#1a120c'; x.fillRect(Math.round(bx) - 1, Math.round(by) - 1, sz + 2, sz + 2);
+    x.fillStyle = '#ffffff'; x.fillRect(Math.round(bx), Math.round(by), sz, sz);
+    if (p >= 1) {
+      burst(t, bx, by, 14, ['#ffffff', '#ffd75e', '#ff5e5e', '#5ea8ff'], 10);
+      if (combo.time !== 'day') for (let k = 0; k < 3; k++) setTimeout(() => burst(lastT, P.W * (0.3 + Math.random() * 0.4), P.H * (0.07 + Math.random() * 0.13), 34, k % 2 ? ['#ffd75e', '#fff3b0', '#ffffff'] : ['#ff5e5e', '#5ea8ff', '#ffffff', '#5ee87a'], 26), 250 + k * 420);
+      hr = null; nextHR = t + 9 + Math.random() * 6;
+    }
+  }
+  parts = parts.filter(q => t - q.t0 < q.life);
+  for (const q of parts) { const a = t - q.t0, f = 1 - a / q.life; const px = q.x + q.vx * a, py = q.y + q.vy * a + 14 * a * a;
+    x.globalAlpha = Math.max(0, Math.min(1, f * 1.6)); x.fillStyle = (a < 0.08 || (f < 0.35 && Math.random() < 0.4)) ? '#ffffff' : q.c; x.fillRect(Math.round(px), Math.round(py), 1, 1); }
+  x.globalAlpha = 1;
+}
+
+/* ---------------------------------------------------------------- loop, controls */
+let t0 = performance.now(), lastDraw = 0, lastStep = -1;
+function chase(t) { const step = still ? 0 : Math.floor(t * 6); if (step === lastStep) return; lastStep = step; bulbs.forEach((b, i) => b.classList.toggle('on', still ? i % 2 === 0 : (i + step) % 4 < 2)); }
+function loop(now) {
+  if (!still && heroOn && now - lastDraw >= 33 && !document.hidden) { lastT = (now - t0) / 1000; lastDraw = now; if (lv) lv.draw(lastT, false); drawFx(lastT); chase(lastT); }
+  requestAnimationFrame(loop);
+}
+function reroll() {
+  combo = pickCombo(combo); remember(); parts = []; hr = null; nextHR = lastT + 3;
+  if (!still) { const w = document.createElement('div'); w.className = 'wipe'; stage.appendChild(w); w.addEventListener('animationend', () => w.remove()); }
+  layout();
+}
+const dlg = document.getElementById('dlg');
+const openDlg = () => { if (!dlg.open) { if (dlg.showModal) dlg.showModal(); else alert('Wabbaseball is coming soon!'); } };
+document.getElementById('start').addEventListener('click', openDlg);
+document.getElementById('reroll').addEventListener('click', reroll);
+host.addEventListener('click', reroll);
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+addEventListener('keydown', e => {
+  if (dlg.open || e.metaKey || e.ctrlKey || e.altKey) return;
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (e.key === 'Enter' && tag !== 'button' && tag !== 'a' && scrollY < innerHeight * 0.5) { e.preventDefault(); openDlg(); }
+  else if (e.key === 'r' || e.key === 'R') reroll();
+});
+mq.addEventListener && mq.addEventListener('change', e => { still = e.matches; layout(); chase(lastT); });
+let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(layout, 80); });
+layout(); chase(0); requestAnimationFrame(loop);
+// the crawl keeps a steady reading speed whatever the screen
+const setCrawl = () => { const s = document.querySelector('.track span'); if (s) document.querySelector('.track').style.setProperty('--crawl', Math.round(s.offsetWidth / 70) + 's'); };
+setCrawl(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(setCrawl);
+// the hero only animates while it's on screen
+let heroOn = true; new IntersectionObserver(es => { heroOn = es[0].isIntersecting; }).observe(stage);
+// lineup rows step in as they reach the screen
+const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } }), { rootMargin: '0px 0px -12% 0px' });
+document.querySelectorAll('.reveal').forEach(el => rv.observe(el));
+// click a screenshot to see it full size
+const zoom = document.getElementById('zoom'), zimg = zoom.querySelector('img');
+document.querySelectorAll('.shot img').forEach(im => im.addEventListener('click', () => { zimg.src = im.src; zimg.alt = im.alt; if (zoom.showModal) zoom.showModal(); }));
+zoom.addEventListener('click', () => zoom.close());
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+window.WABB = { set: (logo, time) => { combo = { logo, time }; layout(); }, still: v => { still = v; layout(); } };
+})();
+</script>
+</body>
+</html>
